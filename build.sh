@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Gitting ip list"
-python /home/tomcat/.jenkins/workspace/awsauto/codebase/autoscaling.py > /mnt/HostMeta.txt
+python /home/tomcat/.jenkins/workspace/awsauto/autoscaling.py > /mnt/HostMeta.txt
 echo "Ip list done"
 
 source /mnt/ServiceMeta.txt
