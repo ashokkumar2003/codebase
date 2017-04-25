@@ -22,10 +22,10 @@ echo "$HostGroup"
         do
             echo "------------ Deploying on $host -> $service"
 
-        rsync -avizpg -O -e "ssh -t -i /mnt/free.pem -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" /opt/ashokcode/$service  ec2-user@$host:/var/www/html/
+        rsync -avizpg -O -e "ssh -T -i /mnt/free.pem -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" /opt/ashokcode/$service  ec2-user@$host:/var/www/html/
 done
 
-                ssh -t -i /mnt/free.pem -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -l ec2-user $host "sudo service httpd status | awk '{if(\$4!=\"running\") {system(\"sudo service httpd start\")}}'"
+                ssh -T -i /mnt/free.pem -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -l ec2-user $host "sudo service httpd status | awk '{if(\$4!=\"running\") {system(\"sudo service httpd start\")}}'"
 
                 echo "----------- Apache service is started"
 
