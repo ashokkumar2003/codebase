@@ -2,4 +2,4 @@
 phpinfo();
 ?>
 Thanks
-Best
+Best of luck
